@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    面试题总结 | 学习经验总结
+  </title>
+  <meta name="description" content="坚持就是胜利">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="安霞">
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives" class="header-toolbar-right"> 2 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i class="fa fa-tags"></i> Tags </a>
+        <a href="/tags" class="header-toolbar-right"> 0 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories" class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">学习经验总结</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    安霞
+
+    <span class="post-date float-right" title="{{moment(1543211215000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1543211215000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>面试题总结</h1>
+    <h3 id="课外"><a href="#课外" class="headerlink" title="课外"></a>课外</h3><h5 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h5><ol>
+<li>先百度地图申请成为开发者，获取key。然后在Index.html页面引入百度/腾讯地图的一个js文件。</li>
+<li>在需要定位的页面里面new qq.map.geoLocation(key, myID) ，可以拿到当前所在位置的经纬度</li>
+<li>把经纬度传递给后台，后台向地图发起请求，根据经纬度返回附近建筑信息，最后传递给前端进行渲染</li>
+<li>Iframe的src属性可以输出整个百度/腾讯地图</li>
+</ol>
+<h5 id="一般电商首页逻辑"><a href="#一般电商首页逻辑" class="headerlink" title="一般电商首页逻辑"></a>一般电商首页逻辑</h5><p>a) 首页一进入需要获取当前地理位置，也就是用户所在的城市。获取到城市ID</p>
+<p>b) 把城市ID传递给后台，后台 返回对应的轮播位、导航列表和内容部分</p>
+<h5 id="编辑个人资料逻辑"><a href="#编辑个人资料逻辑" class="headerlink" title="编辑个人资料逻辑"></a>编辑个人资料逻辑</h5><p>a) 点击我的，获取用户信息，渲染到页面，点击修改用户名时，input输入之后，点击确定修改，清除之前的本地存储，重新把新的用户名存储进去，同时把用户名发送到后台，后台更新用户名。当用户再次进入就是最新的用户资料了。</p>
+<p>b) 如果是单页面应用，返回个人信息页面时，获取本地存储好的用户名</p>
+<h5 id="seo的实现"><a href="#seo的实现" class="headerlink" title="seo的实现?"></a>seo的实现?</h5><p>a) Div+css布局，符合W3C规范的语义化标签。Meta标签优化（title，description，keywords）。</p>
+<p>b) 服务端渲染SSR：服务端渲染优势：更好的SEO，更快的内容到达时间，在服务端渲染一部分代码，提高页面渲染速度</p>
+<p>c) 判断是不是真的需要服务端渲染，预渲染也可以解决部分SEO优化，如果我们做的是营销方面的网页，可以用预渲染。如果我们做的是追求内容更快到达，可以考虑服务端渲染</p>
+<p>d) 前端单页面应用预渲染方案：</p>
+<pre><code>prerender-spa-plugin@2.X版本插件定义多个html文件，就相当于有了多个页面，很多个title和meta，对SEO友好
+vue-meta-info，动态更改meta标签，vue的meta标签来做SEO优化，可跟prerender配合使用更好
+</code></pre><h5 id="TypeScript的具体阐述"><a href="#TypeScript的具体阐述" class="headerlink" title="TypeScript的具体阐述"></a>TypeScript的具体阐述</h5><p>把javascript开发集成为真正的面向对象的、强类型的框架，使前台的开发可以像后台开发一样，模块化，便利化，大大的提高了开发的效率</p>
+<h5 id="WebAPP、native、混合开发、小程序、H5页面"><a href="#WebAPP、native、混合开发、小程序、H5页面" class="headerlink" title="WebAPP、native、混合开发、小程序、H5页面"></a>WebAPP、native、混合开发、小程序、H5页面</h5><ol>
+<li><p>webApp</p>
+<p> 所有用H5开发的可运行于浏览器端的应用都称为webAPP</p>
+</li>
+<li><p>H5页面</p>
+<p>是HTML5的简称，是一种高级网页技术。比H4有更多的交互和功能。最大的优点之一是在移动设备上支持多媒体。平时看到的幻灯片、小游戏等都是H5网页。跟我们上网看到的网页本质上没有任何区别。H5一般用来品牌传播、活动推广、产品展示。</p>
+</li>
+<li><p>混合开发：ybridAPP。H5+native开发。</p>
+<p> a&gt;重点是H5与native的交互。Android中通过webview加载html页面。例如支付宝-口碑里面，打开其中一个网页下拉，发现是‘网页有XXX提供’</p>
+<p> b&gt;混合开发还有一种：套壳APP。就是把H5网页打包成APP，每个界面都是网页。每次访问都需要从云端调取内容，导致反应慢。</p>
+<p> 优点：便于调试、开发周期短、费用低、内容方便更新。</p>
+<p> 缺点：功能/界面无法自定，加载慢，网络要求高，安全性低</p>
+</li>
+<li><p>NativeAPP开发：</p>
+<p> 优点：app数据保存在本地，app能及时调取，响应速度快，运行流畅。兼容性好，安全性高，功能可以自定。</p>
+<p> 缺点：开发周期长，费用高，发版慢等。Native访问手机原生功能强。但是发版慢、开发周期长</p>
+</li>
+<li><p>小程序：运行与微信</p>
+<p> 优点：更新迭代快，功能权限高，综合H5和native的优点，体积小，宣传快。</p>
+</li>
+<li>H5怎么跟native进行通讯</li>
+</ol>
+<ul>
+<li>native内嵌H5需要webview容器（iframe就是）</li>
+<li>通讯需要一个JSBridge桥梁，JSBridge作用就是连接H5和native（native细分为Android和IOS）</li>
+<li>Android下可以捕捉window对象，IOS下可以捕捉资源请求（ajax请求或src属性）</li>
+<li>Android下在H5页面使用window<a href="{需要传递的参数}">“call_share_fun”</a>，其中call_share_fun是跟native约定好的字段，在H5页面调用执行。注意：window下没有这个函数，所以，需要放trycache里面防止报错</li>
+<li>IOS下在H5里面使用ajax发起一次请求，url就是协议好的url。或者src属性，src=“callFun({传递的参数})”</li>
+<li>通讯有一个指定好的协议。公司名:// + 公司内部自定义函数名 ，拼接起来就是完整的url。举例：mjlx://call_share_fun</li>
+</ul>
+<h5 id="发起一次url的过程"><a href="#发起一次url的过程" class="headerlink" title="发起一次url的过程"></a>发起一次url的过程</h5><ul>
+<li>先走一遍本地缓存资源，找本地的DNS缓存</li>
+<li>如果本地没有，去读取电脑的PC操作系统下的hosts（是整个电脑的访问路径配置）配置文件，如果文件里面有对应的url，会访问对应url的对应网址。</li>
+<li>如果hosts没有，才去internet访问真实url</li>
+<li>浏览器发起一个DNS系统调用，获取到域名对应的IP地址之后，发起HTTP三次握手</li>
+<li>TCP/IP链接建立之后，浏览器向服务器发送http请求。</li>
+<li>服务端接收到请求，根据路径参数，把后端处理后的结果返回给浏览器，可以是一个完整的HTML页面</li>
+<li>浏览器拿到HTML页面代码，开始解析和渲染，html中的js/css/图片等静态资源也是http请求，都需要走上面相同步骤</li>
+<li>浏览器根据拿到的资源最终完整呈现页面</li>
+</ul>
+<h5 id="JWT（json-web-token）技术来做前后端鉴权。"><a href="#JWT（json-web-token）技术来做前后端鉴权。" class="headerlink" title="JWT（json-web-token）技术来做前后端鉴权。"></a>JWT（json-web-token）技术来做前后端鉴权。</h5><p>a) 用户使用用户名密码来请求服务器 è服务器进行验证用户的信息 è 服务器通过验证发送给用户一个token</p>
+<p>b) 客户端存储token，并在每次请求时附送上这个token值 è 服务端验证token值，并返回数据</p>
+<p>c) JWT的构成</p>
+<pre><code>第一部分我们称它为头部（header)
+第二部分我们称其为载荷（payload类似于飞机上承载的物品)，
+第三部分是签证（signature)
+</code></pre><h5 id="JWT技术：-json-web-token-登录验证"><a href="#JWT技术：-json-web-token-登录验证" class="headerlink" title="JWT技术：( json-web-token)登录验证"></a>JWT技术：( json-web-token)登录验证</h5><ul>
+<li>每次请求都需要携带token字段，可以进行路由等权限的验证，做前后端验证健全。如果没有携带token去后台，后台会认为没有权限，直接抛出错误</li>
+<li>发起一次登录请求，如果登录验证通过，后台返回数据会包括token字段，本地存储token字段，然后拿着token字段去后台请求对应的用户权限</li>
+<li>客户端收到服务器返回的JWT字段，可以存储在cookie里面，也可以存储在localStorage里面，但是cookie无法跨域，所以，最好的做法是放到http的头信息Authorization字段里面。另一种做法：跨域时，JWT放到post请求的数据体里面</li>
+</ul>
+<h5 id="CMS场景用户权限及localStorage不更新问题，接口权限、登录权限"><a href="#CMS场景用户权限及localStorage不更新问题，接口权限、登录权限" class="headerlink" title="CMS场景用户权限及localStorage不更新问题，接口权限、登录权限"></a>CMS场景用户权限及localStorage不更新问题，接口权限、登录权限</h5><p>在用户第一次使用普通管理员账号登录成功之后返回的数据里面有token字段，本地存储token字段</p>
+<ul>
+<li>如果他返回登录页，使用另外一个超级管理员的账号再次登录，还是会返回token字段，重新设置localStorage存储的token</li>
+<li>可以看到，浏览器里面的token字段已经更新，但是因为是单页面应用，跳转路由进入首页之后，fetch.js里面封装的http方法获取到的localStorage还是上次的token字段</li>
+<li><p>原因：单页面应用只有reload，js才会刷新， 页面不刷新js不会重新获取localStorage的值，这个字段就不会更新，所以用户看到的仍然是上次登录的权限界面。为了解决这个问题，有以下2中解决办法：</p>
+<p>   第一种：location.href = ‘/home’ 使用location.href跳转页面，可以刷新页面</p>
+<p>  第二种：window全局监听localStorage的setItem保存token字段时的事件<br>  重构setItem，在setItem里面修改localStorage值时，派发一个事件，window全局监听，值发生改变就立即触发监听函数，改变对象的值<br>  tools.js里面封装dispatchEventStroage函数并抛出</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function dispatchEventStroage () &#123;</span><br><span class="line">const signSetItem = localStorage.setItem</span><br><span class="line">// 重构setItem</span><br><span class="line">localStorage.setItem = function (key, newValue) &#123;</span><br><span class="line">// 实例化自定义事件</span><br><span class="line">let setEvent = new Event(&apos;setItemEvent&apos;)</span><br><span class="line">// 设置key值和value</span><br><span class="line">setEvent.key = key</span><br><span class="line">setEvent.newValue = newValue</span><br><span class="line">// 当setItem加小括号调用执行时，dispatchEvent触发window全局的setItemEvent事件执行</span><br><span class="line">window.dispatchEvent(setEvent)</span><br><span class="line">signSetItem.apply(this, arguments)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">// main.js引入toos.js文件，调用执行</span><br><span class="line">tool.dispatchEventStroage()</span><br><span class="line">// fetch.js里面封装的http请求数据方法</span><br><span class="line">// 为了安全和权限验证，使用JWT技术，每次请求都需要携带token字段</span><br><span class="line">const reqHeaders = &#123;</span><br><span class="line">Accept: &apos;text/json&apos;,</span><br><span class="line">token: localStorage.getItem(&apos;token&apos;) || &apos;&apos;</span><br><span class="line">&#125;</span><br><span class="line">window.addEventListener(&apos;setItemEvent&apos;, function(e) &#123;</span><br><span class="line">reqHeaders.token = e.newValue</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="单页面应用点击前进后退按钮不刷新页面渲染怎么实现？纯js实现不刷新路由跳转效果"><a href="#单页面应用点击前进后退按钮不刷新页面渲染怎么实现？纯js实现不刷新路由跳转效果" class="headerlink" title="单页面应用点击前进后退按钮不刷新页面渲染怎么实现？纯js实现不刷新路由跳转效果"></a>单页面应用点击前进后退按钮不刷新页面渲染怎么实现？纯js实现不刷新路由跳转效果</h5><p>a) H5扩展了history的API。有存储当前历史记录点pushState，替换当前历史记录的replaceState，监听历史记录的popstate</p>
+<p>b) popstate可以捕捉到前进后退按钮的点击，就可以获取到需要切换的url，更改url</p>
+<p>c) 然后更换页面内容。方法：读取路由对应的文件内容，通过innerHTML或者appendChild添加到页面box</p>
+<h5 id="diff算法的作用与实现"><a href="#diff算法的作用与实现" class="headerlink" title="diff算法的作用与实现"></a>diff算法的作用与实现</h5><p>a) diff算法执行时有三个维度：Tree-diff/Component-diff/Element-diff，按顺序依次执行。</p>
+<p>b) Tree-diff是对树的每一层进行遍历，如果某个组件不存在就直接销毁。</p>
+<p>c) Component和element-diff是同级对比。Vue/react的虚拟dom利用了diff算法</p>
+<h5 id="高阶组件和高阶函数的区别？"><a href="#高阶组件和高阶函数的区别？" class="headerlink" title="高阶组件和高阶函数的区别？"></a>高阶组件和高阶函数的区别？</h5><p> <strong>高阶函数</strong>：以函数作为参数的函数，return一个函数。如：map，reduce，filter，sort都是高阶函数，forEach是for循环的高阶函数</p>
+<p> <strong>高阶组件</strong>：以组件作为参数的组件，return一个组件。它是一个纯函数，接受一个组件参数。高阶组件最好不要有自己的state，传值用props方法。不去改变原始组件，通过组合的方式。HOC（table）。HOC是父组件，table是子组件，子父组件的传参</p>
+<h5 id="如何在固定时间刷新页面？"><a href="#如何在固定时间刷新页面？" class="headerlink" title="如何在固定时间刷新页面？"></a>如何在固定时间刷新页面？</h5><p>setTimeout(()=&gt;{window.location.reload()},1000<em>60</em>60)</p>
+<h5 id="Git，svn的特性"><a href="#Git，svn的特性" class="headerlink" title="Git，svn的特性"></a>Git，svn的特性</h5><p>a) Git与svn核心区别就是：Git是分布式的版本控制系统。Svn是集中式管理的版本控制系统。</p>
+<p>b) Git与svn一样有自己的集中式版本库或服务器，但git更倾向于分布式模式。<br>开发人员从中心版本库/服务器上克隆代码到本地，本地就有了自己的版本库。确保开发人员离线仍然可以操作版本库，提交文件，查看历史版本记录，创建分支等。</p>
+<p>c) Git把内容按元数据方式存储，svn是按文件存储</p>
+<p>d) Git分支和svn不同。svn操作分支经常会发生分支被遗漏的情况，git却可以让你在同一个工作目录下快速在几个分支之间切花</p>
+<p>e) Svn有全局的版本号，git没有。Git的内容完整性比svn强。</p>
+<h5 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h5><p>a) 单页面应用开发，vue和react状态管理时，点击增加按钮，number由1增加number到100，当刷新时number又变回原来的1？</p>
+<p>b) 用vuex刷新页面数据丢失。本地存储解决。</p>
+<p>c) 一进入页面判断本地存储是否有内容，如果有合并到vuex里面，如果没有，直接用vuex的数据</p>
+<h3 id="ES6相关"><a href="#ES6相关" class="headerlink" title="ES6相关"></a>ES6相关</h3><h5 id="function和箭头函数的区别"><a href="#function和箭头函数的区别" class="headerlink" title="function和箭头函数的区别"></a>function和箭头函数的区别</h5><p>a) 箭头函数是匿名函数，不能作为构造函数，不能使用new运算符。</p>
+<p>b) 箭头函数不绑定arguments，用rest参数即…解决</p>
+<p>c) 箭头函数不绑定this，会捕获其所在的上下文（即定义时）的this值作为自己的this，this指向调用它的那个对象</p>
+<p>d) 箭头函数通过call和apply调用一个函数时，只传入一个参数对this指向没有影响</p>
+<p>e) 箭头函数没有原型属性prototype</p>
+<p>f) 箭头函数不能当做Generator函数，不能使用yield关键字</p>
+<p>g) 箭头函数的this永远指向其上下文的this，任何方法都改变不了其指向。如call，bind和apply</p>
+<h5 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h5><p>a) 语法糖又叫糖衣语法。在不影响程序运行的前提下，对语法进行包装，方便程序运行，可读性高，更方便程序员使用。</p>
+<p>b) Class是构造函数的语法糖。Async是generator语法糖。Promise可以说是callback的语法糖。箭头函数也是语法糖。</p>
+<h5 id="ES6比ES5有那些改进？ES6新增了那些js的语法糖"><a href="#ES6比ES5有那些改进？ES6新增了那些js的语法糖" class="headerlink" title="ES6比ES5有那些改进？ES6新增了那些js的语法糖"></a>ES6比ES5有那些改进？ES6新增了那些js的语法糖</h5><p>1.改进了ES5的变量提升机制。增加了块级作用域。增加了常量的定义，解决了变量提升。</p>
+<ol>
+<li>静态类的改进。字符串模板，结构赋值，对象，class类的定义，扩展的方法，箭头函数</li>
+<li>class，async。generator是ES6的。箭头函数。promise在callback的基础上做了优化</li>
+</ol>
+<h5 id="var-和-let-和-cont的区别"><a href="#var-和-let-和-cont的区别" class="headerlink" title="var 和 let 和 cont的区别"></a>var 和 let 和 cont的区别</h5><p>a) 使用 let 语句声明一个变量，该变量的范围限于声明它的块中。  可以在声明变量时为变量赋值，也可以稍后在脚本中给变量赋值。 </p>
+<p>b) 使用 let 声明的变量，在声明前无法使用，否则将会导致错误。</p>
+<p>c) 如果未在 let 语句中初始化您的变量，则将自动为其分配 JavaScript 值 undefined</p>
+<p>d) 重复声明一个变量时。var会覆盖上一个变量的赋值，而let则会报错你已经定义过了</p>
+<p>e) Var的作用域是最近的函数作用域；let的作用域是最近的块作用域，会比函数作用域小</p>
+<p>f) 举例：一个for循环放在了函数中，let只在这个for里面有效，而var是在整个函数里面有效</p>
+<h5 id="Axios和fetch对比？为什么项目使用axios和fetch"><a href="#Axios和fetch对比？为什么项目使用axios和fetch" class="headerlink" title="Axios和fetch对比？为什么项目使用axios和fetch"></a>Axios和fetch对比？为什么项目使用axios和fetch</h5><ol>
+<li>fetch更友好，直接就是promise和then调用，更符合现在的编程思想</li>
+<li>axios是基于promise的http库，是对ajax的进一步封装，支持拦截请求和响应<h3 id="样式相关"><a href="#样式相关" class="headerlink" title="样式相关"></a>样式相关</h3><h5 id="Less和sass的区别"><a href="#Less和sass的区别" class="headerlink" title="Less和sass的区别"></a>Less和sass的区别</h5>a) Less是基于js，是在客户端处理的。定义变量用@</li>
+</ol>
+<p>b) Sass是基于ruby的，是在服务端处理的。定义变量用$</p>
+<h3 id="div-H5"><a href="#div-H5" class="headerlink" title="div+H5"></a>div+H5</h3><h5 id="H5新增"><a href="#H5新增" class="headerlink" title="H5新增"></a>H5新增</h5><p>a) 语义化标签 ：header footer nav aside article section hgroup。语义化标签：名字跟它本身的概念相似</p>
+<p>b) 本地存储 ：sessionStorage、localStorage和indexedDB加强本地存储</p>
+<p>c) 离线web应用：window.applicationCache</p>
+<p>d) CSS3 ：before、after、first-child、nth-child，C3动画</p>
+<p>e) 地理定位 ：window.navigator.geolocation</p>
+<p>f) Canvas，Audio和video音视频</p>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><h5 id="项目开发中使用的规范"><a href="#项目开发中使用的规范" class="headerlink" title="项目开发中使用的规范"></a>项目开发中使用的规范</h5><p><strong>模块化规范</strong>：组件建立在模块化之上。Js模块化。组件内部拆分模块</p>
+<p><strong>工程化规范</strong>：接口文档规范、js/css语法命名规范、命名规范</p>
+<p><strong>前端工程目录规范</strong>：项目文件的划分、模块的划分、命名规范等</p>
+<p><strong>代码规范</strong>：建立在ESlint规范之上，我们公司内部自定了一些规范，包括：等号/函数有空格、单一换行符规范等</p>
+<p><strong>自动化构建</strong>：打包压缩、抽离css、动态注入js<br>构建层目录规范：package.json必须有，.babelrc文件配置babel，构建本地server，代码的编译和打包，config配置等。除了src其他的都可称为基础设施层/构建层</p>
+<p><strong>组件化规范</strong>：拆分组件、拆分功能模块</p>
+<p><strong>React规范</strong>：ES6方式定义组件即react.component。static方式定义props。对props做非空验证propsType。展示组件和容器组件的划分，展示组件不做任何逻辑。避免多次render。</p>
+<p> <strong>Vue规范</strong>：定义在vue实例上的方法统一挂载到vue原型上，使用了defineproperty，而不是vue.prototype，避免全局污染和误操作。项目共用组件参照elementUI，把所有组件放到数组里面，通过遍历统一注册到vue.component上。尽可能的使用computed。vuex尽可能使用map辅助函数。vuex尽可能拆分module，可维护性更强</p>
+<h3 id="项目开发中遇到的问题"><a href="#项目开发中遇到的问题" class="headerlink" title="项目开发中遇到的问题"></a>项目开发中遇到的问题</h3><h5 id="项目开发遇到的问题"><a href="#项目开发遇到的问题" class="headerlink" title="项目开发遇到的问题"></a>项目开发遇到的问题</h5><p> 移动端有300毫秒的点击延迟，可以用fastClick第三方包解决</p>
+<h5 id="项目上线遇到的问题？"><a href="#项目上线遇到的问题？" class="headerlink" title="项目上线遇到的问题？"></a>项目上线遇到的问题？</h5><ol>
+<li><p>路由拦截中，我需要访问实例的一些方法，但是上线之后this访问不到。定义router，把this改为router就行。</p>
+</li>
+<li><p>路由拦截中，我需要触发一个action，但是拿不到store，因为异步。解决方案：settimeout、$nextTick</p>
+</li>
+<li><p>上传图片的时候，pm2 –watch监听文件变动。每次上传都会发生文件变动，文件一边动watch就会触发，pm2就会一直重启，服务就一直报错。</p>
+</li>
+<li><p>生产/开发的时候，线上/线下接口的判断。process_ENV_ENVNODE判断是开发还是生产</p>
+</li>
+<li><p>项目上线时，有使用pm2做进程守护。</p>
+<pre><code> pm2 start不支持npm run build 的方式，可以自定义配置文件。新建build.json文件，里面是{apps:{name:’build’,script:’npm run build’,watch: true // 开启监听}}。然后启动的时候pm2 start build.json即可。Script里面可以写sheel命令
+
+可以在全局新建文件，mysql_bd.sh文件，里面定义好MySQL的启动命令，下次就不需要那么麻烦了,里面的内容是#!/bin/sh mysql -uroot -p1234
+</code></pre></li>
+<li><p>单页面应用使用hash方式跳转路由，带#，不好看，解决办法</p>
+<pre><code>1&gt;更改路由：mode改为history，实现去掉url中的 /#
+2&gt;用history，刷新的时候会找不到页面，可以用到connect-history-api-fallback中间件。当用户在浏览器刷新的时候发送的是get请求，中间件用的就是这个原理，把原本的req的url改变
+3&gt;nginx服务做反向代理，实现去掉端口号。nginx配置upstream实现负载均衡，如果nginx能代理多台服务器的话，可以配置多个服务器，多个服务器一起负担人的并发请求，实现了负载均衡。
+4&gt;全局nginx安装完成之后再etc里面，编辑nginx.conf文件，在里面插入 upstream，更改location，nginx -s stop 停止nginx
+</code></pre></li>
+</ol>
+<h5 id="PWA（progressive-web-app）"><a href="#PWA（progressive-web-app）" class="headerlink" title="PWA（progressive web app）"></a>PWA（progressive web app）</h5><p>渐进式网页应用。使用多种技术增强web app的功能。核心是离线缓存web service。开发PWA是为了开发接近native的应用。为了提升用户体验。解决web app访问更友好的问题，更逼近原生应用。</p>
+<h5 id="离线存储web-service"><a href="#离线存储web-service" class="headerlink" title="离线存储web service"></a>离线存储web service</h5><ol>
+<li>离线缓存web service因为安全问题，限制在https和localhost本地使用</li>
+<li>create-react-app创建的src目录下有registerServiceWorker.js文件，就是web service原理</li>
+<li>解决web app（浏览器端）端访问更友好的问题。利用的是浏览器端的缓存机制。浏览器做好缓存之后，浏览器之后所有的请求都是从web service中请求的。更逼近与原生应用<h5 id="MVVM框架和jQuery这种大型js框架的区别"><a href="#MVVM框架和jQuery这种大型js框架的区别" class="headerlink" title="MVVM框架和jQuery这种大型js框架的区别"></a>MVVM框架和jQuery这种大型js框架的区别</h5>a) mvvm数据驱动试图，数据优先。jQuery操作dom</li>
+</ol>
+<p>b) vue里面操作dom，只有2种方法：自定义指令/ref</p>
+<h5 id="预加载和懒加载"><a href="#预加载和懒加载" class="headerlink" title="预加载和懒加载"></a>预加载和懒加载</h5><p> <strong>懒加载</strong>：举例：瀑布流<br>    图片懒加载：当访问一个页面的时候，先把img元素背景图片路径替换成一张大小为1*1px图片的路径（这样就只需请求一次，俗称占位图），只有当图片出现在浏览器的可视区域内时，才设置图片正真的路径，让图片显示出来。这就是图片懒加载。<br>    懒加载的原理就是先在页面中把所有的图片统一使用一张占位图进行占位，把正真的路径存在元素的“data-url”属性里，页面加载完成后，根据scrollTop判断图片是否在用户的视野内，如果在，则将data- url属性中的值取出存放到src属性中。在滚动事件中重复判断图片是否进入视野，如果进入，则将data-url属性中的值取出存放到src属性中</p>
+<p> <strong>预加载</strong>：loading加载过程中就是在预加载、requireJS也是预加载（提前把所有依赖文件加载完成）<br>提前加载图片，当用户需要查看时可直接从本地缓存中渲染。</p>
+<p>实现方式</p>
+<p>方法一：用CSS和JavaScript实现预加载  </p>
+<p>方法二：仅使用JavaScript实现预加载  </p>
+<p>方法三：使用Ajax实现预加载<br>c) ajax预加载css/js/img<br>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(function () &#123;</span><br><span class="line">         let head = document.getElementsByTagName(‘head’)[0];</span><br><span class="line">         let css = document.createElement(‘link’)  css.type=’text/css’;css.rel=’stylesheet’;css.href=css-url;</span><br><span class="line">         let js = document.createElement(‘script’)  js.type =’text/javascript’; js.src = js-url;</span><br><span class="line">         head.appendChild(css); head.appendChild(js);</span><br><span class="line">         new Image().src = imgSrc;</span><br><span class="line">      &#125;, 1000)</span><br></pre></td></tr></table></figure>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><h5 id="项目优化"><a href="#项目优化" class="headerlink" title="项目优化"></a>项目优化</h5><p>a) 减少http请求，减少操作dom数量<br>压缩js/css文件。在加载js/css文件时，我们需要将公共的js/css文件加载在header头中，其他的加载在相应的body中，如果我们不这样做，就会重复的加载js/css文件，js标签不重要的可以加异步async和defer</p>
+<p>b) 应该把公共的js文件放在header头中，加载时一定要注意加载顺序，因为js文件会阻塞加载，可能会改变表的dom结构</p>
+<p>c) 精灵图，合并页面小图标，一次性加载进来，然后进行图片定位，找出需要用到的图片</p>
+<h5 id="Vue中使用-bootcdn-对打包的vendor进行优化CND加速"><a href="#Vue中使用-bootcdn-对打包的vendor进行优化CND加速" class="headerlink" title="Vue中使用 bootcdn 对打包的vendor进行优化CND加速"></a>Vue中使用 bootcdn 对打包的vendor进行优化CND加速</h5><p>a) 打包 vender 时不打包 vue、vuex、vue-router、axios 等，换用国内的 bootcdn 直接引入到根目录的 index.html 中</p>
+<pre><code>i. 使用方法：index.html中，&lt;script src = “//cdn.bootcss.com/vue/2.2.5/vue.min.js”&gt;&lt;/script&gt;
+ii. 在webpack中有externals属性，可以忽略不需要打包的库
+externals：{‘vue’：‘Vue’}
+</code></pre><p>b) 还可以拆分其他的库等。</p>
+<h5 id="get和post请求特点"><a href="#get和post请求特点" class="headerlink" title="get和post请求特点"></a>get和post请求特点</h5><p>a) Get 请求能缓存，Post 不能</p>
+<p>b) Post 相对 比Get 安全，因为Get 请求都包含在 URL 里，且会被浏览器保存历史纪录，Post 不会，但是在抓包的情况下都是一样的。</p>
+<p>c) Post 可以通过 request body来传输比 Get<br>更多的数据，Get 没有这个技术</p>
+<p>d) URL有长度限制，会影响 Get 请求，但是这个长度限制是浏览器规定的，不是 RFC 规定的</p>
+<p>e) Post 支持更多的编码类型且不对数据类型限制</p>
+<h5 id="Get和set"><a href="#Get和set" class="headerlink" title="Get和set"></a>Get和set</h5><p>a) 在Object.defineProperty中的数据劫持。react中可以使用。</p>
+<p>b) react中，get是访问器。set是修改的时候触发。返回true/false的时候使用get方式定义</p>
+<h5 id="webpack的使用"><a href="#webpack的使用" class="headerlink" title="webpack的使用"></a>webpack的使用</h5><p>a) webpack使用有2种情况。process_ENV_ENVNODE判断是开发还是生产</p>
+<p>b) dev开发环境：用webpack-dev-server构建开发环境，起本地服务，引入依赖，定义入口出口文件，定义modules等。</p>
+<p>c) production生产环境：打包静态资源、js和css做抽离、代码压缩</p>
+<p>d) 例如vue-cli生成的项目build下有webpack.base/dev/prod.js，base里面配置基础的出入口、依赖等，dev里面配置devServer起服务，prod就是使用各种plugin对项目的代码进行抽离和压缩。</p>
+<p>e) run build打包出来的dist目录下有index.html和一个static文件夹。static下的js文件夹里面有vendor.js和app.js，vendor里面是项目引入的所有类库。app.js里面是项目的component组件。当项目上线时，把vendor文件部署到CDN上，使用CDN加速，剩下的app.js很小，所以，访问速度可以达到很快。</p>
+<h5 id="单向数据流的解释"><a href="#单向数据流的解释" class="headerlink" title="单向数据流的解释"></a>单向数据流的解释</h5><p>a) 单向数据流指只能从一个方向来修改状态。View里面触发action，action更改state状态，state的改变反应到view。</p>
+<p>b) 子组件内部不能直接修改从父组件传递过来的数据。如果用了vuex/redux，可以间接修改</p>
+<h5 id="实现深拷贝和浅拷贝的方法"><a href="#实现深拷贝和浅拷贝的方法" class="headerlink" title="实现深拷贝和浅拷贝的方法"></a>实现深拷贝和浅拷贝的方法</h5><p>a) 深拷贝和浅拷贝的区别：内存地址的复制</p>
+<p>b) Object.assign（{}，obj1，obj2.。。。）只能做浅拷贝</p>
+<p>c) JSON.parse(JSON.stringify(obj1)) 深拷贝，缺点：如果obj1是{ fun: function(){ console.log(123) } }这种function，就没办法了</p>
+<p>d) jQuery提供的$.extend(true, {}, obj1，obj2.。。);值为true就是深拷贝，为false就是浅拷贝</p>
+<p>e) lodash函数库，提供_.cloneDeep来做深拷贝</p>
+<p>f) 递归遍历深拷贝</p>
+<h5 id="object的方法"><a href="#object的方法" class="headerlink" title="object的方法"></a>object的方法</h5><p>a) Object.assign方法实行的是浅拷贝，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。同名属性会替换</p>
+<p>b) Object.create(parent, {z : { writable:true, configurable:true, value: “newAdd”} }) 使用指定的原型对象及其属性去创建一个新的对象</p>
+<p>c) Object.defineProperty(Object , ‘is’,{value:’a’, configurable:true, enumerable: false, writable: true}) 在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象</p>
+<p>d) Object.keys(obj) ，Object.values(obj)，Object.entries(obj)返回一个由一个给定对象的自身可枚举属性/属性值/键值对组成的数组，排列顺序和使用 for…in 循环遍历该对象时返回的顺序一致。与for in的区别是for in循环会枚举原型链上的属性。</p>
+<p>e) obj.hasOwnProperty(‘name’) 判断对象自身属性中是否具有指定的属性</p>
+<p>f) Object.getPrototypeOf()返回指定对象的原型（内部[[Prototype]]属性的值，即<strong>proto</strong>，而非对象的prototype）</p>
+<p>g) Object. isPrototypeOf()判断一个对象是否存在于另一个对象的原型链上</p>
+<p>h) Object.setPrototypeOf(obj,prototype) 设置对象的原型对象</p>
+<pre><code>Object.is()判断两个值是否相同。如果两个值都是undefined/null/true/false/NaN/指向同一个对象，则两个值相同
+</code></pre><h5 id="小程序开发时只能用https的url"><a href="#小程序开发时只能用https的url" class="headerlink" title="小程序开发时只能用https的url"></a>小程序开发时只能用https的url</h5><p>a) 不支持http，可以在微信开发者工具中勾选“不校验合法域名”，即可正常请求。</p>
+<p>b) 可以在微信公众平台小程序部分在开发设置里面配置服务器域名。完成真实的接口调试。</p>
+<h5 id="闭包？"><a href="#闭包？" class="headerlink" title="闭包？"></a>闭包？</h5><p>a) js只有全局和局部、函数作用域，没有块级作用域，闭包可实现块级作用域效果</p>
+<p>b) 我们外部要用到函数内部的一些变量和方法是不行的，这就用到闭包了，闭包是指有权访问另一个函数作用域中的变量的函数。 就是函数内部在创建另一个函数。因为闭包的关系可以模拟出私有的方法，来定义一些公共的函数，并且可以访问私有函数的变量，就比如说react中一个模块来extends来继承react.Component中的一些方法，就是利用了闭包，把一些私有的方法抛出，所以this上就有这些方法</p>
+<p>c) 使用闭包产生内存泄漏问题，目前闭包只会存在于IE，chrome和firefox已经可以做到垃圾回收</p>
+<h5 id="Gitflow工作流？"><a href="#Gitflow工作流？" class="headerlink" title="Gitflow工作流？"></a>Gitflow工作流？</h5><p>首先项目开发人员由dev创建功能分支进行开发，开发完成后向leader发起pull request，和code review（代码审核，先让领导看，如果领导一下就看出了问题，就没话了），完毕之后，合并到dev分支。由测试人员从dev分支拉取release测试分支，如果没问题，不做操作。如果有问题，由dev分支拉取代码到fixbug分支进行修复，完毕之后，合并到dev和release分支</p>
+<h6 id="什么是generator函数？"><a href="#什么是generator函数？" class="headerlink" title="什么是generator函数？"></a>什么是generator函数？</h6><p>a) Generator不同于普通函数，所以要加*来作为标识，它是一种状态机，封装了多个内部状态，执行的函数会返回一个遍历器对象，可以依次依赖generator函数内部的每一个状态</p>
+<p>b) 。在generator函数内部使用yield来定义不同的内部状态，可以暂停函数执行，可以通过next的方式调用，generator函数会从上一次暂停的地方继续执行，找见yield暂停。</p>
+<p>c) 在遍历器对象中有一个done的可以key值，是false表示还没有执行完，true表示函数内部没有课执行的东西了。yield就是暂停的标志，也就是异步的分界线。函数内部有return的话会当做值来输出，+<br>-没有的话会返回undefined。ES6新增了async语法糖。</p>
+<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><p>a) 基本数据类型：number、string、boolean、null、undefined，引用数据类型：Array、object、function，ES6：symbol</p>
+<p>b) 基本数据类型，名值存储在栈（zhan）内存中。等号赋值时，栈内存会开辟一个新内存。</p>
+<p>c) 引用数据类型：名存在栈内存中，值存在堆内存中，但是栈内存会提供一个引用的地址指向堆内存中的值。</p>
+<h5 id="冰桶游戏：canvas-js实现游戏"><a href="#冰桶游戏：canvas-js实现游戏" class="headerlink" title="冰桶游戏：canvas+js实现游戏"></a>冰桶游戏：canvas+js实现游戏</h5><p>a) 在canvas画布上覆盖一层div，div按照九宫格划分，绑定点击事件，当点击某一个格的时候，触发冰桶的出现。</p>
+<h5 id="面试话术"><a href="#面试话术" class="headerlink" title="面试话术"></a>面试话术</h5><p>a) 自己负责的模块开发完成之后，不是接手别人已经开发一部分的模块熟悉代码，而是接手新的功能模块进行开发。</p>
+<p>b) 刚进入公司需要多久适应时间就可以上手开发？ 半天/1天</p>
+<p>c) 官网首页从开发到测试，3,4天时间足够。详情页更快</p>
+<p>d) CMS系统，一般没有原型图，只有业务需求。为了快速开发搭建项目，我们使用了ElementUI库。</p>
+<pre><code>   登录页面使用了基于canvas的particle粒子图。
+在数据筛选时，每次都传递一个条件对象，把筛选条件跟vuex里面定义的edit对象合并之后发送到后台，后台返回符合条件的数据
+</code></pre><p>e) 项目怎么分配？</p>
+<pre><code>首先，我手上可能是有项目的，我把项目做完之后，在参与到新项目中
+如果类似购物车之类的，我会先向后台要UID，如果没有合适UID，就本地mock数据
+leader分发任务的时候,一般为了快速开发，我会跟后台要一个uid提前异步开发。如果同步开发耽误进程。
+</code></pre><p>f) 做播放器：用H5的video标签做视频的请求截流。，后台把视频流分段，分为很多个Http请求，前台只负责分段发送请求</p>
+<p>g) 编辑个人资料</p>
+<pre><code>点击我的，获取用户信息，渲染到页面，点击修改用户名时，input输入之后，点击确定修改，清除之前的本地存储，重新把新的用户名存储进去，同时把用户名发送到后台，后台更新用户名。当用户再次进入就是最新的用户资料了。
+如果是单页面应用，返回个人信息页面时，获取本地存储好的用户名，就可以正常显示更改过后的用户名
+</code></pre><h5 id="Vue中渲染方式render和template"><a href="#Vue中渲染方式render和template" class="headerlink" title="Vue中渲染方式render和template"></a>Vue中渲染方式render和template</h5><p>a) 用vue-cli脚手架下载下来之后的vue项目目录里面的node_modules下的vue文件夹里面，你将会找到很多不同的 Vue.js 构建版本</p>
+<p>b) CommonJS和ESModule负责项目使用ES5还是ES6语法，完整版和runtime版负责项目是用template还是render渲染</p>
+<p>c) Runtime运行时版本（vue.runtime.common/esm.js），只能用render渲染，如果用components+template方式就会报错：“你正在使用runtime方式构建vue项目，template模板编译器不被允许，你可以把模板预编译成渲染函数render，或者使用包含template模板编译器的完整编译方式”</p>
+<p>d) 而完整版(vue.common/esm.js)，render和components+template都可以。</p>
+<h6 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h6><p>a) server2server数据中转</p>
+<pre><code>nodeFetch第三方包在服务端请求数据，做数据中转，实现跨域。
+原理：本地向线上自己的服务器发起请求，然后由服务器向真正的接口请求数据
+</code></pre><p>b) Cors：设置响应头res.Header</p>
+<p>c) Jsonp，script标签的src属性，本质上是一次script外链资源的访问</p>
+<p>d) Proxy代理</p>
+<p>e) Window.name</p>
+<p>f) H5新增的window.postMessage</p>
+<p>g) Web socket，跟postMessage类似，是服务端向客户端推送数据</p>
+<p>h) 修改document.domain</p>
+<h5 id="前后端交互"><a href="#前后端交互" class="headerlink" title="前后端交互"></a>前后端交互</h5><p>a) 前端请求数据URL和接口文档主要由后台来写，前端发现问题可协商更改</p>
+<p>b) 前后端交互的数据格式</p>
+<p>c) 前端应该告知后台那些有效信息，后台才能返回前端想要的数据</p>
+<p>d) 前端应该如何回拒一些本不属于自己做的一些功能需求或任务</p>
+<h5 id="Git分支冲突"><a href="#Git分支冲突" class="headerlink" title="Git分支冲突"></a>Git分支冲突</h5><p>a) 首先，我们的git分支划分很规范，一般不会遇到问题。如果遇到问题可以进行代码检索，这个有相关的工具可以帮助我们，比如sourcetree</p>
+<p>b) 如果冲突文件比较多，我们也可以采用版本回退的方式，当然，在回退之前需要把自己本地的代码进行备份，然后用reset HEAD^版本号，回滚到上一个冲突之前的版本，本地修改冲突。</p>
+<h3 id="兼容问题"><a href="#兼容问题" class="headerlink" title="兼容问题"></a>兼容问题</h3><h5 id="Android和ios兼容"><a href="#Android和ios兼容" class="headerlink" title="Android和ios兼容"></a>Android和ios兼容</h5><p>a) IOS中，Margin失效，Android无问题</p>
+<p>b) IOS中，定位问题，position带来的浮动问题（Android的问题）</p>
+<p>c) IOS中， input的keyup事件不会立即响应，只有通过删除才可以响应</p>
+<p>d) IOS中，设置input按钮样式会被默认样式覆盖</p>
+<p>e) 移动端 HTML5 audio autoplay 失效问题</p>
+<p>f) 移动端 video在部分android机播放之后浮在最上层，设置z-index无效</p>
+<p>g) 移动端点击300ms延迟，fastclick解决</p>
+<p>h) iOS 系统中，中文输入法输入英文时，字母之间可能会出现一个六分之一空格</p>
+<p>i) iOS端字体的优化(横竖屏会出现字体加粗不一致等)</p>
+<h5 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h5><p>a) 媒体查询@media screen + 响应式布局，bootstrap</p>
+<p>b) 样式缩放，直接用px开发，然后计算屏幕与网页的宽高比，用transform：scale进行网页全局缩放，不推荐</p>
+<p>c) 网易方案：除了font-size，其他全部用rem布局，通过js计算分辨率的改变，html的font-size随之改变。设置了临界点，分辨率大于1080时，font-size不会变化了</p>
+<p>d) 淘宝的flexbile.js，原理：动态通过js改变meta的viewport的缩放比，同时改变HTML的font-size。也设置了临界点</p>
+<h3 id="js问题"><a href="#js问题" class="headerlink" title="js问题"></a>js问题</h3><h5 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h5><p>a) <strong>proto</strong>是只有对象有的，prototype是函数有的</p>
+<p>b) 构造函数实例返回的是对象，对象就有隐式原型</p>
+<p>c) 定义在prototype上的都会最后显示在实例对象的<strong>proto</strong>隐式原型上</p>
+<p>d) 实例的隐式原型指向构造的显式原型</p>
+<p>e) instance.<strong>proto</strong>.<strong>proto</strong> 是Object对象</p>
+<p>f) instance.<strong>proto</strong>.constructor 是构造函数本身</p>
+<p>g) 原型链是隐式原型形成的</p>
+<p>h) 所有引用类型都有proto属性，隐式原型</p>
+<p>i) <img src="https://note.youdao.com/yws/public/resource/7cef4d728898ac5ad3c88dbe2cc40b5f/xmlnote/7E1A4362E7044C009258707F4A123A91/7776" alt="image"></p>
+<p>所有函数拥有prototype显式原型</p>
+<h5 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h5><p>a) 构造函数继承，call和apply方法</p>
+<p>b) 原型继承，A.prototype=new B()</p>
+<p>c) 直接继承，A.prototype = B.prototype</p>
+<p>d) 拷贝继承，遍历A所有属性，赋值给B</p>
+<p>e) 组合继承 = 构造继承 + 原型继承</p>
+<h5 id="判断对象是否为数组"><a href="#判断对象是否为数组" class="headerlink" title="判断对象是否为数组"></a>判断对象是否为数组</h5><p>a) objectName instanceof Array</p>
+<p>b) objectName.constructor == Array</p>
+<p>c) 特性判断：有length属性和splice方法，并且length不可枚举才是数组object.propertyIsEnumerable(‘length’)</p>
+<p>d) ES6方法Array.isArray(objectName);</p>
+<p>e) Object.prototype.toString.call(objectName) === ‘[object Array]‘;</p>
+<h3 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h3><h5 id="Vue中，Object-defineProperty方式挂载全局方法优点"><a href="#Vue中，Object-defineProperty方式挂载全局方法优点" class="headerlink" title="Vue中，Object.defineProperty方式挂载全局方法优点"></a>Vue中，Object.defineProperty方式挂载全局方法优点</h5><p>a) defineProperty可以自定义，设置了不可写，防止了误操作，更安全。</p>
+<p>b) 如果用vue.prototype方式挂载，会造成全局污染，一个地方改了值，全部调用都被改动了，不安全。</p>
+<h5 id="vuex的实现原理"><a href="#vuex的实现原理" class="headerlink" title="vuex的实现原理"></a>vuex的实现原理</h5><p>a) Vuex：是一个专为vue.js开发的状态管理模式。采用集中式存储 管理应用的所有组件的状态，以相应规则保证状态可预测。</p>
+<pre><code>具体实现：VueComponents 用dispatch触发一个actions，actions里面commit一个mutations，只能在mutations里面改变state状态，state的改变更新到视图。同时，vuex提供了mapActions/mapState/mapGetters方法快捷在页面。
+</code></pre><h5 id="Vue跳转路由的方法"><a href="#Vue跳转路由的方法" class="headerlink" title="Vue跳转路由的方法"></a>Vue跳转路由的方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This.$router.push(&#123;name:’mater’, params: &#123;id: 1&#125;&#125;)刷新页面参数会丢失</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This.$router.push(&#123;path:’/mater’, query: &#123;id: 1&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<p>Replace方式替换，不会留下history记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.$router.push(&#123;path: ‘home’, replace: true&#125;)</span><br><span class="line">&lt;router-link :to=&quot;...&quot; replace&gt;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
+<p>跳转this.$router.go(n)  n可为正可为负</p>
+<h5 id="v-model的原理"><a href="#v-model的原理" class="headerlink" title="v-model的原理"></a>v-model的原理</h5><p>a)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model=&quot;sth&quot;&gt;相当于&lt;input v-bind:value=&quot;sth&quot; v-on:input=&quot;sth=$event.target.value&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>自从html5开始input每次输入都会触发oninput事件，所以输入时input的内容会绑定到sth中，于是sth的值就被改变<br> Vue中，Object.defineProperty方式挂载全局方法优点<br>a) defineProperty可以自定义，设置了不可写，防止了误操作，更安全。</p>
+<p>b) 如果用vue.prototype方式挂载，会造成全局污染，一个地方改了值，全部调用都被改动了，不安全。</p>
+<h3 id="react"><a href="#react" class="headerlink" title="react"></a>react</h3><h5 id="React生命周期shouldComponentUpdate"><a href="#React生命周期shouldComponentUpdate" class="headerlink" title="React生命周期shouldComponentUpdate"></a>React生命周期shouldComponentUpdate</h5><p>a) 它可以优化页面渲染，提高性能优化。State状态发生改变的时候触发，可以判断如果新的state跟上一次的状态是相同的我们就可以return一个false来阻止这一次的页面渲染。</p>
+<p>b) 举例：input的初始值是整数1，我们输入的也是1，但是输入之后获取到的是字符串1,这两次的值是一样的，只是类型不一样，我们完全可以不让页面进行重新渲染。</p>
+<p>c) 如果涉及到引用类型的更新，主要就是怎么判断两次的数据值是相同的。我们先判断新值和旧值的length是否相同。然后我们可以封装一个函数，里面可以用递归循环遍历两次的数据并判断是否一致。</p>
+<h5 id="React跳转路由的方法："><a href="#React跳转路由的方法：" class="headerlink" title="React跳转路由的方法："></a>React跳转路由的方法：</h5><p>方法一：引入Redirect标签，用redirect标签的to属性跳转 import { Redirect } from ‘react-router’;  <redirect to="/chat"></redirect></p>
+<p>方法二：引入prop-types包   import PropTypes from ‘prop-types’;</p>
+<p>方法三：使用withRouter解决。可百度查看</p>
+<p><strong>react组件优化</strong>：<br><strong>属性传递优化</strong> <strong>事件优化</strong>。</p>
+<p>事件的声明方式有三种,其中3&gt;2&gt;1</p>
+<pre><code>a) &lt;button onClick={this.clickFun.bind(this)}&gt; 声明时bind改变this
+b) &lt;button onClick={() =&gt; this.clickFn()}&gt; 使用函数式声明事件
+c) &lt;button onClick={this.clickFun}&gt;.然后在constructor中写this.clickFun=this.clickFun.bind(this)
+</code></pre><p>组件嵌套时父组件往子组件传参，应该将对象的key和value在render内先定义再使用render() {const age = {age:18} return ( <demo name="{age}">); }。在传递props/state时，只传递需要的参数（如<demo name="{this.state.name}/">，而不是整个state传递）。否则每一次使用子组件都会生成新的对象进行传递。</demo></demo></p>
+<p><strong>多组件优化</strong></p>
+<ol>
+<li>shouldComponentUpdate(nextProps, nextState)判断是否有必要更新当前组件</li>
+<li>React.PureComponent 替换 React.Component。只适用于浅层比较</li>
+<li>Facebook提供了immutable-js库，它提供了不可变的数据，即要让数据改变只能通过创建新数据的方式，而不能直接修改。</li>
+<li>immutable-js库可能比较大，有一个简易版叫做seamless-immutable，只支持Map,Set,List三种数据类型<br>iii. key优化。数组形式的数据遍历时要求key，key尽量不用索引，用唯一的key</li>
+</ol>
+<p><strong>redux性能优化</strong><br>i. 在使用Redux进行数据的传递时，特别是经常有重复性的数据传递操作时，可以使用reselect库在内部对数据进行缓存处理，在重复调用时便可使用缓存快速加载，加强性能</p>
+<p><strong> 类库按需引入等</strong></p>
+<h5 id="React中连续多次调用setState的后果？"><a href="#React中连续多次调用setState的后果？" class="headerlink" title="React中连续多次调用setState的后果？"></a>React中连续多次调用setState的后果？</h5><p>a) 调用setState时，不会立即渲染，而是放到一个队列里面，等待事件结束，看setState最后渲染的那个结果，最后在进行渲染</p>
+<p>b) 在React中setState不是每次调用就立刻渲染的。而是放到一个队列里面，队列的顺序是在一次事件之内进行结算（比如在click事件过程中可能有很多setState在等待，等Click事件完成之后，setState这个队列里面的内容就开始进行结算了），所以setState多次调用并不会导致渲染多次。但是事务的次数可能会导致渲染。</p>
+<h5 id="redux原理"><a href="#redux原理" class="headerlink" title="redux原理"></a>redux原理</h5><p> <strong>Redux</strong>：component èdispatch(action) è reducer è subscribe è getState è component</p>
+<p><strong>React-redux</strong>：component è actionCreator(data) èreducer ècomponent。同时提供了Provider和Connect。</p>
+<pre><code>provider是一个封装好的组件，接受store作为props，这样react中任何组件都可以获取store。
+connect(mapStateToProps, mapDispatchToProps, mergeProps, options)(component)
+</code></pre><ol>
+<li><p>mapStateToProps有state和自定义的props两个参数，return一个对象，这个对象将作为props的一部分传入组件。自定义props变化也会触发它</p>
+</li>
+<li><p>mapDispatchToProps（dispatch，【ownProps】）</p>
+</li>
+<li><p>mergeProps（stateProps，dispatchProps，ownProps）将mapStateToProps() 与 mapDispatchToProps()返回的对象和组件自身的props合并成新的props并传入组件。默认返回 Object.assign({}, ownProps, stateProps, dispatchProps) 的结果。</p>
+</li>
+<li><p>options={pure=true}表示connect容器组件将在shouldComponentUpdate中对store中的state和ownProps进行浅对比，优化性能。Pure为false时不对比</p>
+</li>
+</ol>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://yoursite.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2018 安霞</li>
+      <li><a href="http://yoursite.com">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
